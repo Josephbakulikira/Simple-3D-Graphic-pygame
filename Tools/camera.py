@@ -1,15 +1,18 @@
 from Tools.Vector import Vector3, Vector2
 from Tools.matrix import *
+import math
 import pygame
 
 def rotationCam(val1, val2):
     return [ rotationX(val1), rotationY(val2) ]
 
 class Camera:
-    def __init__(self, position=Vector3(0, 0, -10), scale=600, distance=5):
+    def __init__(self, position=Vector3(0, 1, -12), scale=600, distance=5):
         self.position = position
-        self.rotation = rotationCam(0, 0)
-        self.r = Vector2(0, 0)
+
+        self.r = Vector2(-0.47507, -0.86499)#camera rotation x and camera rotation y
+
+        self.rotation = rotationCam(self.r.x, self.r.y)
         self.scale = scale
         self.distance = distance
         self.speed = 0.05
@@ -48,6 +51,7 @@ class Camera:
         self.r.x += y
         self.r.y += x
         self.rotation = rotationCam(self.r.x, self.r.y)
+        #print(self.r)
 
     def HandleMouseEvent2(self, x, y):
         self.position.x += x

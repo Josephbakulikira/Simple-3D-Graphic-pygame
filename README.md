@@ -1,5 +1,5 @@
-# Simple-3D-engine-pygame
-
+# Simple-3D-engine-pygame From Scratch
+ 
 ### checkout my youtube channel: https://www.youtube.com/c/Auctux
 ---
 

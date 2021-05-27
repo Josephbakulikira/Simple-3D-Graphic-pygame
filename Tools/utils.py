@@ -48,16 +48,10 @@ def DrawFaces(window, points, faces, colors, face_list, cam, indices):
         for i in face:
             dist += getDistance3D( cam.position, Vector3(indices[i][0], indices[i][1], indices[i][2]) )
         z = dist/4
-        print(z)
+        #print(z)
 
         face_sort.append([face[0], face[1], face[2], face[3], z])
     face_sort = Zsort(face_sort)
     for i, face in enumerate(face_sort):
-        # if face[4]
+
         DrawPolygons(window, face[0], face[1], face[2], face[3], points, face_list[(face[0], face[1], face[2], face[3])])
-        # if z >10:
-        #     front = True
-        # if front == True:
-        #     DrawPolygons(window, face[0], face[1], face[2], face[3], points, face_list[(face[0], face[1], face[2], face[3])] )
-    # for index, tup in enumerate(faces):
-    #     DrawPolygons(window, tup[0], tup[1], tup[2], tup[3], points, colors[index])

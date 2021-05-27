@@ -11,7 +11,7 @@ window = pygame.display.set_mode(Resolution)
 
 clock = pygame.time.Clock()
 fps = 60
-
+mx, my = 0, 0
 cam = Camera()
 angle = 0
 c = Cube()
@@ -26,9 +26,14 @@ while run:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 run = False
+        if event.type == pygame.MOUSEMOTION:
+            if pygame.mouse.get_pressed()[0]:
+                mx, my = event.rel
+                mx = mx/sens
+                my = my/sens
+                #print(f"{mx}, {my}")
+                cam.HandleMouseEvent(mx, my)
     cam.HandleInput()
-
-    c.transform = matrix_multiplication(matrix_multiplication(rotationY(angle), rotationX(angle)), rotationZ(angle) )
 
     c.Draw(cam, window)
 

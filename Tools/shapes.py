@@ -41,6 +41,8 @@ class Cube(Shape):
         PointPositions = []
         for index, vert in enumerate(self.vertices):
             transform = matrix_multiplication(self.transform, vert)
+            transform = matrix_multiplication(camera.rotation[0], transform)
+            transform = matrix_multiplication(camera.rotation[1], transform)
             transform[0][0] += camera.position.x
             transform[1][0] += camera.position.y
             z = 1 / (camera.distance - transform[2][0])

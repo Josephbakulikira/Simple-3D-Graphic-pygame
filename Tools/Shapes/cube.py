@@ -1,13 +1,9 @@
-import pygame
-from Tools.utils import *
+from Tools.Shapes.base import Shape
 from Tools.matrix import *
 from Tools.Vector import *
-from Tools.constants import Width, Height
+from Tools.utils import *
+from Tools.constants import *
 
-class Shape:
-    def __init__(self, position):
-        self.position = position
-        self.transform = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
 class Cube(Shape):
     def __init__(self, position=Vector2(Width//2, Height//2)):
         super().__init__(position)
@@ -30,27 +26,28 @@ class Cube(Shape):
         #front, back
         #self.faces = [(0, 2, 7, 6),(1, 3, 4, 5) ]
 
-        self.faceColors = [(0, 0,0 ), (255,238,173), (255,111,105), (255,204,92), (40,54,85), (75,56,50)]
-        #self.faceColors = [(255, 0,0 ), (0, 255, 0), (0, 0, 255), (255,255,0), (0, 255, 255), (255, 0, 255)]
+        #self.faceColors = [(20, 230,10 ), (255,238,173), (255,111,105), (255,204,92), (40,54,85), (75,56,50)]
+        self.faceColors = [(255, 0,0 ), (0, 255, 0), (0, 0, 255), (255,255,0), (0, 255, 255), (255, 0, 255)]
 
         self.face_list = dict(zip(self.faces, self.faceColors) )
-        print(self.face_list)
 
     def Draw(self, camera, window, ShowPoints=False, ShowLines=False, ShowFaces=True):
         points = []
         PointPositions = []
         for index, vert in enumerate(self.vertices):
             transform = matrix_multiplication(self.transform, vert)
-            transform = matrix_multiplication(camera.rotation[0], transform)
             transform = matrix_multiplication(camera.rotation[1], transform)
+            transform = matrix_multiplication(camera.rotation[0], transform)
+
             transform[0][0] += camera.position.x
             transform[1][0] += camera.position.y
-            z = 1 / (camera.distance - transform[2][0])
+            z = 1 / (-camera.position.z - transform[2][0])
 
             p = projectionMatrix(z)
             t = matrix_multiplication(p, transform)
 
             x, y = t[0][0], t[1][0]
+
             x = int(x * camera.scale) + self.position.x
             y = int(y * camera.scale) + self.position.y
 

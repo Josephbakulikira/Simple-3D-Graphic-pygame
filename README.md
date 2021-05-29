@@ -3,7 +3,7 @@
 ### checkout my youtube channel: https://www.youtube.com/c/Auctux
 ---
 
-it still need a proper Z sorting of faces when moving the cube,
+it still need a proper Z sorting of faces when moving the cube the occlusion is not finished , still looking for a better way to do that , the faces kinda overlap each other sometimes,
 and also apply the zsort to all the shapes in the scene, i might improve this code later,... any help is welcome
 
 ---

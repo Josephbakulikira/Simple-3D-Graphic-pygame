@@ -11,7 +11,7 @@ def GetEvent(mx, my, wheel, camera):
             if event.key == pygame.K_ESCAPE:
                 run = False
         if event.type == pygame.MOUSEMOTION:
-            if pygame.mouse.get_pressed()[0]:
+            if pygame.mouse.get_pressed()[2]:
                 mx, my = event.rel
                 mx = mx/sens
                 my = my/sens

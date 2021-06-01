@@ -9,8 +9,8 @@ and also apply the zsort to all the shapes in the scene, i might improve this co
 ---
 # Inputs(Commands)
             " W A S D " to move
-            " scroll mouse while maintaining the left click " to rotate the cube
-            " hold the mouse scroll wheel and move the mouse" to move in camera in scene up and down
+            " maintain the Right button of the mouse and move the mouse " to rotate the cube
+            " click and maintain the mouse scroll wheel and move the mouse" to move  the camera up and down in scene up and down
             " numpad + and numpad -" to zoom in and out 
 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/48150537/119762345-2139b280-becb-11eb-986b-4a8efca0b402.gif)

@@ -2,8 +2,8 @@ import pygame
 import math
 import event
 from Tools.matrix import *
-from Tools.Shapes.cube import Cube
-from Tools.Shapes.grid import GridPlane
+from Tools.Objects.cube import Cube
+from Tools.Objects.grid import GridPlane
 from Tools.Vector import *
 from Tools.utils import *
 from Tools.constants import *

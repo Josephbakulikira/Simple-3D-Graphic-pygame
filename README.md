@@ -1,4 +1,4 @@
-# Simple-3D-engine-pygame From Scratch
+# Simple-3D-Perspective Projection-pygame From Scratch
  
 ### checkout my youtube channel: https://www.youtube.com/c/Auctux
 ---

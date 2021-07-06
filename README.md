@@ -1,7 +1,7 @@
 # Simple-3D-Perspective Projection-pygame From Scratch
  
 ### checkout my youtube channel: https://www.youtube.com/c/Auctux
-### checkout another 3D engine implementation with python : https://github.com/Josephbakulikira/Pygame-3D-engine--Graphic
+### checkout another 3D engine that support lighting and implementation with python : https://github.com/Josephbakulikira/Pygame-3D-engine--Graphic
 ---
 
 it still need a proper Z sorting of faces when moving the cube the occlusion is not finished , still looking for a better way to do that , the faces kinda overlap each other sometimes,
